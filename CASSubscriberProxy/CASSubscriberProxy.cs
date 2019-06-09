@@ -56,11 +56,6 @@ namespace CASSubscriberProxyNS
 
             while (true)
             {
-                if (tryCounter.Equals(maxTry))
-                {
-                    throw new Exception("CASSubscriberProxy: Connection error.");
-                }
-
                 try
                 {
                     proxy.Subscribed();
@@ -69,6 +64,12 @@ namespace CASSubscriberProxyNS
                 catch (Exception)
                 {
                     tryCounter++;
+
+                    if (tryCounter.Equals(maxTry))
+                    {
+                        throw;
+                    }
+
                     Thread.Sleep(sleepTime);
                     OpenChannel();
                 }
@@ -81,11 +82,6 @@ namespace CASSubscriberProxyNS
 
             while (true)
             {
-                if (tryCounter.Equals(maxTry))
-                {
-                    throw new Exception("CASSubscriberProxy: Connection error.");
-                }
-
                 try
                 {
                     proxy.Unsubscribed();
@@ -94,6 +90,12 @@ namespace CASSubscriberProxyNS
                 catch (Exception)
                 {
                     tryCounter++;
+
+                    if (tryCounter.Equals(maxTry))
+                    {
+                        throw;
+                    }
+
                     Thread.Sleep(sleepTime);
                     OpenChannel();
                 }
