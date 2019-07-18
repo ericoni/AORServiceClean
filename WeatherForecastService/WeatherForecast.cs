@@ -24,12 +24,12 @@ namespace WeatherForecastService
 		/// <summary>
 		/// Kljuc sa kojm se pristupa sajtu openweathermap
 		/// </summary>
-		private const string appId = "076e0fe79255d818ac0dcc5404821365";
+		private const string appId = "190f46e647df99f809704721f30c81fd"; // 190f46e647df99f809704721f30c81fd  076e0fe79255d818ac0dcc5404821365
 
-		/// <summary>
-		/// Adapter za komunikaciju sam NMS servisom
-		/// </summary>
-		private INetworkModelClient rdAdapter = new RDAdapter();
+        /// <summary>
+        /// Adapter za komunikaciju sam NMS servisom
+        /// </summary>
+        private INetworkModelClient rdAdapter = new RDAdapter();
 
 		/// <summary>
 		/// Za svaki substation trenutna vremenska prognoza
